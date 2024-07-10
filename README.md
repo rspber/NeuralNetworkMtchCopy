@@ -4,4 +4,5 @@
 it's my copy of: https://github.com/andrewlye/matcha
 
 code style changes mainly,
-by now, project will be actualized only.
+
+the project is intended to keep up with the main project only.

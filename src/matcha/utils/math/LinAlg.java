@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author  andrewye
  */
 public class LinAlg {
-	/** 
+	/**
 	 * Returns a standard square identity matrix.
 	 * @param dim the number of rows (or cols).
 	 * @return An identity matrix of dimensions dim*dim.
@@ -35,15 +35,15 @@ public class LinAlg {
 	 * @param idxs the shape-indices of the element to retrieve.
 	 * @return The index of the list element associated at the shape index in row-major order.
 	 */
-	public static int indexRowMajor(double[] elements, int[] shape, int[] idxs) throws Exception {
+	public static int rmo(int elements, int[] shape, int[] idxs) {
 		if (shape.length != idxs.length) {
-			throw new Exception("Error: number of indexes must match shape of object!");
-		} 
+			throw new RuntimeException("Error: number of indexes must match shape of object!");
+		}
 
 		int elementsInShape = 1;
 		for(int i = 0; i < shape.length; i++) elementsInShape *= shape[i];
-		if (elements.length != elementsInShape) {
-			throw new Exception("Error: the number of elements specified by the shape does not match the data.");
+		if (elements != elementsInShape) {
+			throw new RuntimeException("Error: the number of elements specified by the shape does not match the data.");
 		}
 
 		for (int i = 0; i < idxs.length; i++) {
@@ -62,7 +62,7 @@ public class LinAlg {
 
 		return rmo;
 	}
-	
+
 	/**
 	 * Returns a 2-D square matrix with the elements of input as the diagonal.
 	 * @param v the input elements to be diagonalized.
@@ -80,7 +80,7 @@ public class LinAlg {
 
 		return A;
 	}
-	
+
 	/**
 	 * Returns the dimensions of an array (or nested array) of objects.
 	 * @param the object to retrieve the shape of.
