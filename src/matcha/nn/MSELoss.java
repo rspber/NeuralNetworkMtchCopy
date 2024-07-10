@@ -4,6 +4,7 @@ import matcha.engine.Value;
 import matcha.engine.ValueAdd;
 import matcha.engine.ValueDouble;
 import matcha.engine.ValuePow;
+import matcha.engine.ValueSub;
 import matcha.engine.ValueUtil;
 
 public class MSELoss extends Loss<Value>{
@@ -14,7 +15,8 @@ public class MSELoss extends Loss<Value>{
 	public Value loss(Value[] outputs, Value[] targets) {
 		Value loss = new ValueDouble(0.0);
 		for(int i = 0; i < targets.length; i++) {
-			loss = new ValueAdd(loss, new ValuePow((ValueUtil.sub(outputs[i], targets[i])), 2));
+//			loss = new ValueAdd(loss, new ValuePow((ValueUtil.sub(outputs[i], targets[i])), 2));
+			loss = new ValueAdd(loss, new ValuePow((new ValueSub(outputs[i], targets[i])), 2));
 		}
 
 		return loss;

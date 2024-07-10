@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 public class ValueUtil {
-
+/*
 	public static Value div(final Value thiz, final Value x) {
 		return new ValueMul(thiz, new ValuePow(x, -1));
 	}
@@ -15,7 +15,8 @@ public class ValueUtil {
 	public static Value div(final Value thiz, final double x) {
 		return div(thiz, new ValueDouble(x));
 	}
-
+*/
+/*
 	public static Value sub(final Value thiz, final Value x) {
 		return new ValueAdd(thiz, new ValueMul(x, new ValueDouble(-1)));
 	}
@@ -23,7 +24,7 @@ public class ValueUtil {
 	public static Value sub(final Value thiz, final double x) {
 		return sub(thiz, new ValueDouble(x));
 	}
-
+*/
 	/**
 	 * Performs backpropagation on this value, computing the gradient of all linked previous values.
 	 */

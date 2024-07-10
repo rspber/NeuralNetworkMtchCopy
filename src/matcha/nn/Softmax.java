@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import matcha.engine.Value;
+import matcha.engine.ValueDiv;
+import matcha.engine.ValueDouble;
 import matcha.engine.ValueExp;
 import matcha.engine.ValueUtil;
 
@@ -19,7 +21,8 @@ public class Softmax extends Module<Value[]>{
 			norm += out[i].data();
 		}
 		for(int i = 0; i < x.length; i++) {
-			out[i] = ValueUtil.div(out[i], norm);
+//			out[i] = ValueUtil.div(out[i], norm);
+			out[i] = new ValueDiv(out[i], new ValueDouble(norm));
 		}
 
 		return out;
